@@ -13,7 +13,65 @@
       "type": "n8n-nodes-base.emailReadImap",
       "typeVersion": 1,
       "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.from.address }}",
+              "operation": "notEqual",
+              "value2": "youremail@example.com"
+            }
+          ]
+        }
+      },
+      "id": "2",
+      "name": "Loop Prevention",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [450, 300]
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "prompt",
+              "value": "=You are a professional email assistant. Reply to: {{ $json.subject }}\nBody: {{ $json.text }}"
+            }
+          ]
+        }
+      },
+      "id": "3",
+      "name": "Format Prompt",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 2,
+      "position": [650, 300]
     }
   ],
-  "connections": {}
+  "connections": {
+    "Email Read (IMAP)": {
+      "main": [
+        [
+          {
+            "node": "Loop Prevention",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Prevention": {
+      "main": [
+        [
+          {
+            "node": "Format Prompt",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
 }
