@@ -77,6 +77,22 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.1,
       "position": [850, 300]
+    },
+    {
+      "parameters": {
+        "fromEmail": "youremail@example.com",
+        "toEmail": "={{ $json.from.address }}",
+        "subject": "=Re: {{ $json.subject }}",
+        "text": "={{ $json.response }}",
+        "options": {
+          "messageId": "={{ $json.messageId }}"
+        }
+      },
+      "id": "5",
+      "name": "Send Reply",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 1,
+      "position": [1050, 300]
     }
   ],
   "connections": {
@@ -107,6 +123,17 @@
         [
           {
             "node": "Call Ollama",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Call Ollama": {
+      "main": [
+        [
+          {
+            "node": "Send Reply",
             "type": "main",
             "index": 0
           }
