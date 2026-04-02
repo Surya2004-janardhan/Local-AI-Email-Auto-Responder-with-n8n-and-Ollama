@@ -1,6 +1,5 @@
 # Local AI Email Auto-Responder with n8n and Ollama
-
-Build a fully local, private AI email auto-responder using n8n for workflow automation and Ollama for on-device LLM inference.
+A fully local, private AI email auto-responder using n8n for workflow automation and Ollama for on-device LLM inference.
 
 ## Prerequisites
 - Docker and Docker Compose
