@@ -2,3 +2,5 @@ task-requirements.txt
 workflow.png
 
 .env
+explanation.md
+plan.md
