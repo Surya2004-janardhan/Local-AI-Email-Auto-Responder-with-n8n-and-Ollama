@@ -58,7 +58,7 @@
           "parameters": [
             {
               "name": "model",
-              "value": "llama3.2:3b"
+              "value": "llama3:8b"
             },
             {
               "name": "prompt",
