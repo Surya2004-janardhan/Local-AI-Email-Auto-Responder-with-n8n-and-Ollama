@@ -3,14 +3,14 @@
     "imap": {
       "host": "imap.example.com",
       "port": 993,
-      "user": "test-user@example.com",
-      "password": "test-password"
+      "user": "arakutrip40k@gmail.com",
+      "password": "deoi jvuy gduu nfzu"
     },
     "smtp": {
       "host": "smtp.example.com",
       "port": 465,
-      "user": "test-user@example.com",
-      "password": "test-password"
+      "user": "arakutrip40k@gmail.com",
+      "password": "deoi jvuy gduu nfzu"
     }
   }
 }
