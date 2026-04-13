@@ -1,4 +1,4 @@
-version: '3.8'
+
 
 services:
   n8n:
@@ -25,7 +25,8 @@ services:
     container_name: ollama_responder
     ports:
       - "11434:11434"
-    command: ["/bin/sh","-c","ollama pull llama3.2:1b || true && ollama serve --host 0.0.0.0 --port 11434"]
+    entrypoint: ["/bin/sh", "-c"]
+    command: ["ollama serve & sleep 5 && ollama pull llama3:8b && wait"]
     volumes:
       - ollama_data:/root/.ollama
     networks:
