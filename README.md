@@ -36,6 +36,7 @@ Build a fully local, private email auto-responder. n8n handles the workflow auto
    ```bash
    docker exec -it ollama_responder ollama pull llama3:8b
    ```
+   The container name `ollama_responder` comes from the Compose file.
 
 4. **Import the workflow in n8n**
    1. Open `http://localhost:5678`.
@@ -56,7 +57,7 @@ Use `.env` as a source of truth for values you will enter into n8n credentials.
 
 ### Swap the model (optional)
 Update the model in both places:
-- `docker-compose.yml` (`ollama pull ...`)
+- Compose file (`docker-compose.yml`, `ollama pull ...`)
 - `workflow.json` or the **Call Ollama** node (`model` parameter)
 
 ## Verify it works
